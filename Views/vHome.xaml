@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="djaramilloT1.Views.vHome"
+             Title="vHome">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Taller Semana 1" TextColor="Red" FontSize="22" HorizontalOptions="Center" />
+            <Label Text="Formulario de inscripción:" TextColor="Blue" FontSize="18" />
+
+            <Label Text="Identificación:" />
+            <Picker x:Name="pkTipoId" Title="Seleccione el tipo">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>CÉDULA</x:String>
+                        <x:String>RUC</x:String>
+                        <x:String>PASAPORTE</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Entry x:Name="txtNumeroId" Placeholder="Número" Keyboard="Numeric" TextChanged="SoloNumeros_TextChanged" />
+
+            <Label Text="Apellidos:" />
+            <Entry x:Name="txtApellidoPaterno" Placeholder="Paterno" TextChanged="SoloLetras_TextChanged" />
+            <Entry x:Name="txtApellidoMaterno" Placeholder="Materno" TextChanged="SoloLetras_TextChanged" />
+
+            <Label Text="Nombres completos:" />
+            <Entry x:Name="txtNombres" Placeholder="Nombres" TextChanged="SoloLetras_TextChanged" />
+
+            <Label Text="Teléfono personal:" />
+            <Entry x:Name="txtTelefono" Placeholder="0999999999" Keyboard="Telephone" MaxLength="10" TextChanged="SoloNumeros_TextChanged" />
+
+            <Label Text="Correo personal:" />
+            <Entry x:Name="txtCorreo" Placeholder="correo@ejemplo.com" Keyboard="Email" />
+
+            <Label Text="Confirmar correo:" />
+            <Entry x:Name="txtConfirmarCorreo" Placeholder="correo@ejemplo.com" Keyboard="Email" />
+
+            <Button x:Name="btnGuardar" Text="GUARDAR DATOS" Clicked="btnGuardar_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
